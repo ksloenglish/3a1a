@@ -1,0 +1,1642 @@
+<!DOCTYPE html><html lang="en"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<meta name="x-poe-datastore-behavior" content="local_only">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Oxford 3000 A1 Revision Exercise (1-519)</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+        /* Contemporary Gradient - Richer Purple to Soft Blue */
+        --bg-gradient: linear-gradient(135deg, #d8b4fe 0%, #a78bfa 50%, #818cf8 100%);
+        
+        /* Glass Effect */
+        --glass-bg: rgba(255, 255, 255, 0.90);
+        --glass-border: rgba(255, 255, 255, 0.6);
+        
+        /* Colors */
+        --primary-accent: #7c3aed; /* Violet 600 */
+        --primary-hover: #6d28d9; /* Violet 700 */
+        --text-main: #1e293b; /* Slate 800 */
+        --text-muted: #64748b; /* Slate 500 */
+        --correct-color: #059669; /* Emerald 600 */
+        --incorrect-color: #e11d48; /* Rose 600 */
+        --shadow-color: rgba(124, 58, 237, 0.2);
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: var(--bg-gradient);
+        /* Add a subtle pattern overlay for texture */
+        background-image: var(--bg-gradient), radial-gradient(#ffffff 1px, transparent 1px);
+        background-size: 100% 100%, 20px 20px;
+        background-attachment: fixed;
+        color: var(--text-main);
+        margin: 0;
+        padding: 20px; 
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Centers vertically on desktop */
+        min-height: 100vh;
+        line-height: 1.5;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.05);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #c4b5fd;
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #a855f7;
+    }
+
+    .app-container {
+        width: 100%;
+        max-width: 850px;
+        background-color: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        border-radius: 24px;
+        padding: 30px;
+        box-shadow: 0 25px 50px -12px var(--shadow-color);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        margin: auto; 
+    }
+
+    /* Decorative element */
+    .app-container::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, transparent 60%);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    header {
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+
+    header h1 {
+        color: var(--primary-accent);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0;
+        font-weight: 600;
+        opacity: 0.9;
+    }
+
+    header h2 {
+        font-size: 1.8rem;
+        margin: 5px 0;
+        font-weight: 700;
+        background: linear-gradient(to right, #7c3aed, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    header p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    /* Screens */
+    #start-screen, #quiz-screen, #end-screen {
+        display: none;
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    #start-screen h3 {
+        font-size: 1.3rem;
+        margin-bottom: 25px;
+        font-weight: 500;
+        color: var(--text-main);
+    }
+
+    .question-count-options {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn {
+        background: linear-gradient(135deg, var(--primary-accent), var(--primary-hover));
+        color: white;
+        border: none;
+        padding: 12px 28px;
+        border-radius: 12px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 6px -1px rgba(124, 58, 237, 0.3);
+        font-family: inherit;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(124, 58, 237, 0.5);
+        filter: brightness(1.1);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+    }
+
+    /* Quiz Header */
+    #quiz-screen .quiz-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        background: rgba(241, 245, 249, 0.6);
+        padding: 10px 15px;
+        border-radius: 12px;
+        gap: 10px;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    #question-counter, #score-counter {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        white-space: nowrap;
+    }
+
+    #score-counter {
+        color: var(--primary-accent);
+    }
+
+    #return-btn {
+        background: white;
+        border: 1px solid #cbd5e1;
+        color: var(--text-muted);
+        padding: 6px 14px;
+        font-size: 0.8rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        white-space: nowrap;
+    }
+    #return-btn:hover {
+        background: #f8fafc;
+        color: var(--text-main);
+        border-color: #94a3b8;
+        transform: none;
+    }
+
+    /* Question Area */
+    #question-text {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        margin: 20px 0;
+        min-height: 60px;
+        font-weight: 400;
+        color: var(--text-main);
+    }
+
+    .blank {
+        display: inline-block;
+        width: 120px;
+        border-bottom: 2px solid var(--primary-accent);
+        margin: 0 6px;
+        vertical-align: -5px;
+    }
+
+    /* Options Grid */
+    #options-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    /* UPDATED OPTION BUTTON STYLES - VIBRANT GRADIENT */
+    .option-btn {
+        width: 100%;
+        /* Vibrant Purple/Violet Gradient */
+        background: linear-gradient(135deg, #a78bfa 0%, #7c3aed 100%);
+        
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        
+        color: #ffffff;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        
+        padding: 14px 16px;
+        border-radius: 14px;
+        font-size: 1.05rem;
+        cursor: pointer;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        font-family: inherit;
+        position: relative;
+        overflow: hidden;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+    }
+
+    .option-btn:hover:not(:disabled) {
+        background: linear-gradient(135deg, #b794f4 0%, #8b5cf6 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px -5px rgba(124, 58, 237, 0.4);
+        border-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .option-btn.correct {
+        background: linear-gradient(135deg, #34d399 0%, #059669 100%); /* Emerald Gradient */
+        border-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+        color: white;
+    }
+
+    .option-btn.incorrect {
+        background: linear-gradient(135deg, #fb7185 0%, #e11d48 100%); /* Rose Gradient */
+        border-color: rgba(255, 255, 255, 0.5);
+        color: white;
+        opacity: 0.9;
+    }
+
+    .option-btn:disabled {
+        cursor: default;
+        transform: none !important;
+    }
+
+    /* Feedback Area */
+    #feedback-container {
+        min-height: 50px;
+        margin-top: 15px;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(241, 245, 249, 0.5);
+        border-radius: 12px;
+        padding: 8px;
+    }
+
+    #next-btn {
+        margin-top: 15px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* End Screen */
+    #end-screen h2 {
+        font-size: 1.8rem;
+        color: var(--text-main);
+    }
+
+    #final-score {
+        font-size: 3.5rem;
+        font-weight: 800;
+        background: linear-gradient(to bottom right, var(--primary-accent), #c084fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin: 5px 0;
+        line-height: 1;
+    }
+
+    #end-comment {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-bottom: 30px;
+        font-weight: 300;
+    }
+
+    /* Revision List */
+    #revision-container {
+        margin-top: 30px;
+        text-align: left;
+        max-height: 350px;
+        overflow-y: auto;
+        border-top: 1px solid rgba(0,0,0,0.06);
+        padding: 20px 10px 10px 10px;
+    }
+
+    #revision-container h3 {
+        margin-top: 0;
+        color: var(--text-main);
+        font-weight: 600;
+    }
+
+    #revision-list .revision-item {
+        background-color: white;
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        border-left: 4px solid var(--primary-accent);
+        transition: background-color 0.2s;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        border: 1px solid #f1f5f9;
+    }
+
+    #revision-list .revision-item:hover {
+        background-color: #f8fafc;
+    }
+
+    #revision-list .revision-item p {
+        margin: 0 0 6px 0;
+        line-height: 1.4;
+    }
+
+    #revision-list .revision-item .word-info {
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--primary-accent);
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+    }
+
+    #revision-list .revision-item .word-info span {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        font-weight: 400;
+    }
+
+    #revision-list .revision-item .sentence-info {
+        color: var(--text-main);
+        font-style: italic;
+        opacity: 0.9;
+        font-size: 0.95rem;
+    }
+
+    #revision-list .revision-item .sentence-info strong {
+        color: var(--correct-color);
+        font-style: normal;
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-color: rgba(5, 150, 105, 0.4);
+        text-underline-offset: 4px;
+    }
+
+    footer {
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(0,0,0,0.06);
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    /* Tablet and Mobile Responsiveness - UPDATED */
+    @media (max-width: 1366px) {
+        body {
+            align-items: flex-start; 
+            padding: 20px;
+            padding-top: max(30px, env(safe-area-inset-top)); 
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+        }
+        
+        .app-container {
+            padding: 20px;
+            border-radius: 20px; 
+            min-height: auto; 
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0.92);
+            margin: 0 auto 20px auto;
+        }
+
+        /* Compact Header */
+        header {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+        header h1 {
+            font-size: 0.75rem;
+            margin-bottom: 2px;
+        }
+        header h2 {
+            font-size: 1.4rem;
+            margin: 2px 0;
+        }
+        header p {
+            font-size: 0.85rem;
+        }
+        
+        /* Compact Quiz Header */
+        #quiz-screen .quiz-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 5px 10px;
+            padding: 8px 12px;
+            margin-bottom: 15px;
+        }
+
+        #question-counter {
+            grid-column: 1;
+            grid-row: 1;
+            text-align: left;
+            font-size: 0.8rem;
+        }
+
+        #score-counter {
+            grid-column: 2;
+            grid-row: 1;
+            text-align: right;
+            font-size: 0.8rem;
+        }
+
+        #return-btn {
+            grid-column: 1 / -1;
+            grid-row: 2;
+            width: 100%;
+            margin-top: 2px;
+            padding: 6px;
+            font-size: 0.8rem;
+        }
+
+        /* Compact Question Text */
+        #question-text {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            margin: 0 0 15px 0;
+            min-height: auto;
+            flex-grow: 0;
+        }
+        
+        .blank {
+            width: 80px;
+            border-bottom-width: 1px;
+        }
+        
+        /* Compact Options Grid */
+        #options-container {
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .option-btn {
+            padding: 12px;
+            font-size: 0.95rem;
+            border-radius: 10px;
+        }
+        
+        /* Compact Feedback & Footer */
+        #feedback-container {
+            min-height: 40px;
+            margin-top: 10px;
+            padding: 8px;
+            font-size: 0.9rem;
+        }
+
+        #next-btn {
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        .question-count-options .btn {
+            padding: 10px 20px;
+            flex: 1 1 30%;
+        }
+
+        footer {
+            margin-top: auto;
+            padding-top: 10px;
+            font-size: 0.7rem;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="app-container">
+    <header>
+        <h1>K S Lo English</h1>
+        <h2>Oxford 3000 A1<br>Revision Exercise</h2>
+        <p>Words 1 (about) – 519 (man)</p>
+    </header>
+
+    <main>
+        <div id="start-screen">
+            <h3>How many questions would you like to attempt?</h3>
+            <div class="question-count-options">
+                <button class="btn" onclick="startGame(10)">10</button>
+                <button class="btn" onclick="startGame(20)">20</button>
+                <button class="btn" onclick="startGame(30)">30</button>
+                <button class="btn" onclick="startGame(40)">40</button>
+                <button class="btn" onclick="startGame(50)">50</button>
+                <button class="btn" onclick="startGame(100)">100</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen">
+            <div class="quiz-header">
+                <div id="question-counter"></div>
+                <div id="score-counter"></div>
+                <button id="return-btn" class="btn">Return to Title</button>
+            </div>
+            <p id="question-text"></p>
+            <div id="options-container"></div>
+            <div id="feedback-container"></div>
+            <button id="next-btn" class="btn" style="display: none;">Next Question</button>
+        </div>
+
+        <div id="end-screen">
+            <h2>Quiz Complete!</h2>
+            <p>You scored:</p>
+            <div id="final-score"></div>
+            <p id="end-comment"></p>
+            <button id="restart-btn" class="btn">Start Again</button>
+            <div id="revision-container" style="display: none;">
+                <h3>Review Your Answers</h3>
+                <div id="revision-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        © <span id="copyright-year"></span> K S Lo English. All Rights Reserved.
+    </footer>
+</div>
+
+<script>
+    // Irregular verb mapping for A1/A2 words
+    // Format: base: { v2: "past", v3: "participle" }
+    const irregularVerbs = {
+        "become": { v2: "became", v3: "become" },
+        "begin": { v2: "began", v3: "begun" },
+        "break": { v2: "broke", v3: "broken" },
+        "bring": { v2: "brought", v3: "brought" },
+        "build": { v2: "built", v3: "built" },
+        "buy": { v2: "bought", v3: "bought" },
+        "catch": { v2: "caught", v3: "caught" },
+        "choose": { v2: "chose", v3: "chosen" },
+        "come": { v2: "came", v3: "come" },
+        "cost": { v2: "cost", v3: "cost" },
+        "cut": { v2: "cut", v3: "cut" },
+        "do": { v2: "did", v3: "done" },
+        "draw": { v2: "drew", v3: "drawn" },
+        "drink": { v2: "drank", v3: "drunk" },
+        "drive": { v2: "drove", v3: "driven" },
+        "eat": { v2: "ate", v3: "eaten" },
+        "fall": { v2: "fell", v3: "fallen" },
+        "feel": { v2: "felt", v3: "felt" },
+        "fight": { v2: "fought", v3: "fought" },
+        "find": { v2: "found", v3: "found" },
+        "fly": { v2: "flew", v3: "flown" },
+        "forget": { v2: "forgot", v3: "forgotten" },
+        "get": { v2: "got", v3: "got" }, // US: gotten
+        "give": { v2: "gave", v3: "given" },
+        "go": { v2: "went", v3: "gone" },
+        "grow": { v2: "grew", v3: "grown" },
+        "have": { v2: "had", v3: "had" },
+        "hear": { v2: "heard", v3: "heard" },
+        "hit": { v2: "hit", v3: "hit" },
+        "hold": { v2: "held", v3: "held" },
+        "hurt": { v2: "hurt", v3: "hurt" },
+        "keep": { v2: "kept", v3: "kept" },
+        "know": { v2: "knew", v3: "known" },
+        "leave": { v2: "left", v3: "left" },
+        "lend": { v2: "lent", v3: "lent" },
+        "let": { v2: "let", v3: "let" },
+        "lie": { v2: "lay", v3: "lain" },
+        "lose": { v2: "lost", v3: "lost" },
+        "make": { v2: "made", v3: "made" },
+        "mean": { v2: "meant", v3: "meant" },
+        "meet": { v2: "met", v3: "met" },
+        "pay": { v2: "paid", v3: "paid" },
+        "put": { v2: "put", v3: "put" },
+        "read": { v2: "read", v3: "read" },
+        "ride": { v2: "rode", v3: "ridden" },
+        "ring": { v2: "rang", v3: "rung" },
+        "rise": { v2: "rose", v3: "risen" },
+        "run": { v2: "ran", v3: "run" },
+        "say": { v2: "said", v3: "said" },
+        "see": { v2: "saw", v3: "seen" },
+        "sell": { v2: "sold", v3: "sold" },
+        "send": { v2: "sent", v3: "sent" },
+        "shake": { v2: "shook", v3: "shaken" },
+        "shut": { v2: "shut", v3: "shut" },
+        "sing": { v2: "sang", v3: "sung" },
+        "sit": { v2: "sat", v3: "sat" },
+        "sleep": { v2: "slept", v3: "slept" },
+        "speak": { v2: "spoke", v3: "spoken" },
+        "spend": { v2: "spent", v3: "spent" },
+        "stand": { v2: "stood", v3: "stood" },
+        "steal": { v2: "stole", v3: "stolen" },
+        "swim": { v2: "swam", v3: "swum" },
+        "take": { v2: "took", v3: "taken" },
+        "teach": { v2: "taught", v3: "taught" },
+        "tell": { v2: "told", v3: "told" },
+        "think": { v2: "thought", v3: "thought" },
+        "throw": { v2: "threw", v3: "thrown" },
+        "understand": { v2: "understood", v3: "understood" },
+        "wake": { v2: "woke", v3: "woken" },
+        "wear": { v2: "wore", v3: "worn" },
+        "win": { v2: "won", v3: "won" },
+        "write": { v2: "wrote", v3: "written" }
+    };
+
+    // Irregular plurals map (and exceptions to standard rules)
+    const irregularPlurals = {
+        "child": "children",
+        "foot": "feet",
+        "goose": "geese",
+        "half": "halves",
+        "knife": "knives",
+        "leaf": "leaves",
+        "life": "lives",
+        "loaf": "loaves",
+        "man": "men",
+        "mouse": "mice",
+        "person": "people",
+        "shelf": "shelves",
+        "tooth": "teeth",
+        "wife": "wives",
+        "wolf": "wolves",
+        "woman": "women",
+        "fish": "fish",
+        "sheep": "sheep",
+        "euro": "euros",
+        "photo": "photos",
+        "radio": "radios",
+        "video": "videos",
+        "piano": "pianos",
+        "zoo": "zoos"
+    };
+
+    // Data from CSV (1-519)
+    const rawData = [
+{id: 1, w: "about", p: "prep", d: "在…方面；有關，關於，涉及", s: "Can you tell me what the book is about?"},
+{id: 2, w: "about", p: "adv", d: "大約，大概，左右", s: "He is about six feet tall."},
+{id: 3, w: "above", p: "prep", d: "在（或向）…上面；在（或向）…較高處", s: "There's a mirror above the sink."},
+{id: 4, w: "above", p: "adv", d: "在（或向）…上面；在（或向）…較高處", s: "Put it on the shelf above."},
+{id: 5, w: "across", p: "prep", d: "從一邊到另一邊；穿過；橫過", s: "She walked carefully across the busy road this morning."},
+{id: 6, w: "across", p: "adv", d: "從一邊到另一邊；穿過；橫過", s: "It's too wide. We can't swim across."},
+{id: 7, w: "action", p: "n", d: "（尤指應對問題或困難的）行動；行動過程；行為", s: "This problem calls for swift action from the government."},
+{id: 8, w: "activity", p: "n", d: "活動", s: "His spare-time activities include cooking, tennis, and windsurfing."},
+{id: 9, w: "actor", p: "n", d: "演員", s: "\"Who's your favourite actor?\" \"Robert de Niro.\""},
+{id: 10, w: "actress", p: "n", d: "女演員", s: "She's the highest-paid actress in Hollywood."},
+{id: 11, w: "add", p: "v", d: "加，相加", s: "If you add three and four you get seven."},
+{id: 12, w: "address", p: "n", d: "地址；住址", s: "Her business address is easy to find."},
+{id: 13, w: "adult", p: "n", d: "成年人；成年動物", s: "An adult under English law is someone over 18 years old."},
+{id: 14, w: "advice", p: "n", d: "意見；忠告；勸告", s: "Steven gave me some good advice."},
+{id: 15, w: "afraid", p: "adj", d: "畏懼的，害怕的；擔憂的，發愁的", s: "He felt afraid when he heard the loud strange noise."},
+{id: 16, w: "after", p: "prep", d: "（時間、地點或順序）在…之後；（一個）接著（一個）", s: "Let's go for a walk after breakfast."},
+{id: 17, w: "afternoon", p: "n", d: "下午，午後", s: "It was a warm and sunny afternoon in the park."},
+{id: 18, w: "again", p: "adv", d: "又，再一次", s: "Could you spell your name again, please?"},
+{id: 19, w: "age", p: "n", d: "年齡，年紀；存在時間", s: "Do you know the age of that building?"},
+{id: 20, w: "ago", p: "adv", d: "以前，從前", s: "He left the house over an hour ago."},
+{id: 21, w: "agree", p: "v", d: "持相同意見；贊成，贊同", s: "Ann and I never seem to agree."},
+{id: 22, w: "air", p: "n", d: "空氣", s: "I went outside to get some fresh air."},
+{id: 23, w: "airport", p: "n", d: "航空站，航空港，機場", s: "This airport is very large and busy every single day."},
+{id: 26, w: "also", p: "adv", d: "而且（也），此外（還）", s: "She's a photographer and also writes books."},
+{id: 27, w: "always", p: "adv", d: "總是；老是；每次都", s: "It's always cold in this room."},
+{id: 28, w: "amazing", p: "adj", d: "令人驚詫的，驚人的；令人驚喜的", s: "This stain remover really works - it's amazing!"},
+{id: 30, w: "angry", p: "adj", d: "發怒的，憤怒的，生氣的", s: "He's really angry at me for upsetting Sophie."},
+{id: 31, w: "animal", p: "n", d: "（除人、鳥、魚和昆蟲之外的）動物；獸；牲畜", s: "Wild animals and domestic animals live in different places."},
+{id: 33, w: "answer", p: "n", d: "回答；作答；答應；答覆；答案", s: "The minister gave a clear answer to the question."},
+{id: 34, w: "answer", p: "v", d: "回答；作答；答應；答覆；解答", s: "I can't answer you without more detailed information."},
+{id: 39, w: "apartment", p: "n", d: "公寓套房", s: "I'll give you the keys to my apartment."},
+{id: 40, w: "apple", p: "n", d: "蘋果", s: "I will peel an apple before I eat it."},
+{id: 41, w: "April", p: "n", d: "四月", s: "We came back home safely in the month of April."},
+{id: 42, w: "area", p: "n", d: "地區；區域", s: "All areas of the country will have some rain tonight."},
+{id: 43, w: "arm", p: "n", d: "臂，手臂；上肢", s: "My arms ache from carrying this bag."},
+{id: 44, w: "around", p: "prep", d: "四處，周圍；圍繞，（環）繞；掉轉", s: "We sat around the table and talked for many hours."},
+{id: 45, w: "around", p: "adv", d: "大約，大概，左右", s: "He is around six feet tall."},
+{id: 46, w: "arrive", p: "v", d: "到達，抵達（尤指到達旅途的終點）；到來；來臨", s: "What time will your train arrive?"},
+{id: 47, w: "art", p: "n", d: "（包括雕塑、繪畫、音樂等的） 藝術", s: "Can television and pop music really be considered art?"},
+{id: 48, w: "article", p: "n", d: "（報紙或雜誌上的）文章，報導；論文", s: "There was an interesting article on vegetarianism in the paper yesterday."},
+{id: 49, w: "artist", p: "n", d: "藝術家；美術家；畫家；雕塑家", s: "Monet is one of my favourite artists."},
+{id: 50, w: "as", p: "prep", d: "以…的身份；作為", s: "She works as a waitress in a small local restaurant."},
+{id: 51, w: "ask", p: "v", d: "問，詢問；請求，徵求", s: "She asked me a question about the homework last night."},
+{id: 52, w: "at", p: "prep", d: "（表示地點或位置）在…裡；在…上；在…旁", s: "We'll meet you at the entrance."},
+{id: 53, w: "August", p: "n", d: "八月", s: "They usually go to their holiday home in August."},
+{id: 54, w: "aunt", p: "n", d: "姑母；姨母；嬸嬸；伯母；舅母", s: "I have an aunt in Australia."},
+{id: 55, w: "autumn", p: "n", d: "秋天，秋季", s: "We like to travel in autumn when there are fewer tourists."},
+{id: 56, w: "away", p: "adv", d: "去（或在）別處；向另一方向；向一邊", s: "Ms Watson is away on holiday until the end of the week."},
+{id: 57, w: "baby", p: "n", d: "嬰兒，嬰孩", s: "The baby is sleeping in the crib now."},
+{id: 58, w: "back", p: "n", d: "背面", s: "He was lying on his back on the sofa."},
+{id: 59, w: "back", p: "adv", d: "在原處；回到原處；恢復原狀；返回；回到以前", s: "When you take the scissors, remember to put them back."},
+{id: 60, w: "bad", p: "adj", d: "壞的，不好的；令人不悅的", s: "Our holiday was spoiled by bad weather."},
+{id: 61, w: "bag", p: "n", d: "袋子", s: "I put my books in a paper bag."},
+{id: 62, w: "ball", p: "n", d: "球；球狀物", s: "He kicked the tennis ball across the field."},
+{id: 63, w: "banana", p: "n", d: "香蕉", s: "She bought a bunch of bananas at the market."},
+{id: 64, w: "band", p: "n", d: "樂隊，樂團", s: "The rock band played music at the concert."},
+{id: 65, w: "bank", p: "n", d: "銀行", s: "I need to go to the bank at lunchtime."},
+{id: 66, w: "bath", p: "n", d: "澡盆，浴缸", s: "I am relaxing in the bath after a long hard day."},
+{id: 67, w: "bathroom", p: "n", d: "浴室，洗澡間；盥洗室", s: "The house has four bedrooms and two bathrooms."},
+{id: 68, w: "beach", p: "n", d: "海濱，湖濱；海灘，沙灘", s: "We spent the day on the beach."},
+{id: 69, w: "beautiful", p: "adj", d: "美麗的，漂亮的", s: "She is a beautiful woman with a kind smile."},
+{id: 71, w: "become", p: "v", d: "變成；成為；變得", s: "I was becoming increasingly suspicious of his motives."},
+{id: 72, w: "bed", p: "n", d: "床，床舖；床位", s: "He has a bed and two chairs in his small room."},
+{id: 73, w: "bedroom", p: "n", d: "臥房", s: "Our house has a nice bedroom with a big window."},
+{id: 74, w: "beer", p: "n", d: "啤酒", s: "He asked for a pint of beer."},
+{id: 75, w: "before", p: "prep", d: "在…之前；以前", s: "You should always wash your hands before meals."},
+{id: 76, w: "begin", p: "v", d: "開始；開始進行（或存在）", s: "What time does the concert begin?"},
+{id: 77, w: "beginning", p: "n", d: "開頭部分；開端", s: "Notes on how to use this dictionary are at the beginning."},
+{id: 78, w: "behind", p: "prep", d: "在（…的）後面", s: "Look behind you quickly before the bus passes by."},
+{id: 79, w: "behind", p: "adv", d: "在（…的）後面", s: "She rode off down the road with the dog running behind."},
+{id: 80, w: "believe", p: "v", d: "相信", s: "Strangely, no one believed us when we told them."},
+{id: 81, w: "below", p: "adv", d: "在較低處；在某平面之下；（位置）低於", s: "They live on the floor below."},
+{id: 82, w: "below", p: "prep", d: "在較低處；在某平面之下；（位置）低於", s: "From the top, the cars below looked like small insects."},
+{id: 83, w: "best", p: "adj", d: "最好的；最出色的；最優秀的", s: "This is the best meal I've ever had."},
+{id: 84, w: "better", p: "adj", d: "較好的；更好的", s: "He stood near the front to get a better view."},
+{id: 85, w: "between", p: "prep", d: "（空間上）在…中間，在…之間", s: "The town lies halfway between Rome and Florence."},
+{id: 86, w: "bicycle", p: "n", d: "腳踏車，單車，自行車", s: "I go to work by bicycle."},
+{id: 87, w: "big", p: "adj", d: "（尺寸或數量）大的，巨大的", s: "He is a big man who plays football every weekend."},
+{id: 88, w: "bike", p: "n", d: "腳踏車，單車，自行車", s: "It would be better for the environment if more people used bikes."},
+{id: 89, w: "bill", p: "n", d: "帳單", s: "Please pay the electricity bill before the due date."},
+{id: 90, w: "bird", p: "n", d: "鳥；禽", s: "Birds can be caged or wild in nature."},
+{id: 91, w: "birthday", p: "n", d: "生日", s: "Happy birthday to you, Flavio, have a great day."},
+{id: 92, w: "black", p: "adj", d: "黑色的", s: "Black shoes are very popular for formal events."},
+{id: 93, w: "black", p: "n", d: "黑色", s: "She often dresses in black clothes."},
+{id: 94, w: "blog", p: "n", d: "網路日誌，博客，部落格", s: "She writes a food blog sharing recipes and tips."},
+{id: 95, w: "blonde", p: "adj", d: "淺黃色頭髮的；金色頭髮的", s: "She has beautiful blonde hair that shines in the sun."},
+{id: 96, w: "blue", p: "adj", d: "藍色的；天藍色的；青藍色的", s: "He wore a faded blue shirt yesterday."},
+{id: 97, w: "blue", p: "n", d: "藍色", s: "Blue is my favourite colour for painting and drawing pictures."},
+{id: 98, w: "boat", p: "n", d: "艇；小船", s: "They sailed the boat across the lake."},
+{id: 99, w: "body", p: "n", d: "（人或動物的）軀體；身體", s: "A good diet and exercise keep your body healthy."},
+{id: 100, w: "book", p: "n", d: "(紙版或電子版的)書", s: "Have you read any good books recently?"},
+{id: 101, w: "boot", p: "n", d: "靴子", s: "I wear walking boots when I go hiking in the mountains."},
+{id: 102, w: "bored", p: "adj", d: "感到無聊的；感到厭煩的", s: "It was a cold, wet day and the children were bored."},
+{id: 103, w: "boring", p: "adj", d: "煩人的；乏味的；無聊的", s: "She finds opera very boring and does not enjoy it."},
+{id: 104, w: "born", p: "v", d: "出生", s: "She was born in 1950 in a small town near here."},
+{id: 106, w: "bottle", p: "n", d: "瓶，瓶子", s: "I bought a milk bottle from the supermarket today."},
+{id: 107, w: "box", p: "n", d: "箱；盒；匣", s: "I put my books inside a cardboard box for moving."},
+{id: 108, w: "boy", p: "n", d: "男孩；小夥子；男人，男子", s: "A teenage boy is playing football in the park."},
+{id: 109, w: "boyfriend", p: "n", d: "男朋友；（男性）情人", s: "He's not my boyfriend - we're just good friends!"},
+{id: 110, w: "bread", p: "n", d: "麵包", s: "I ate a slice of bread with butter for breakfast."},
+{id: 111, w: "break", p: "v", d: "破碎，破裂；打破；打斷；損壞，弄壞", s: "The dish fell to the floor and broke."},
+{id: 112, w: "break", p: "n", d: "中止，中斷", s: "Finally there was a break in the rain and we went out."},
+{id: 113, w: "breakfast", p: "n", d: "早餐", s: "What do you want for breakfast?"},
+{id: 114, w: "bring", p: "v", d: "拿來，帶來；帶到", s: "\"Shall I bring anything to the party?\" \"Oh, just a bottle.\""},
+{id: 115, w: "brother", p: "n", d: "兄弟", s: "Do you have any brothers and sisters?"},
+{id: 116, w: "brown", p: "adj", d: "棕色（的），褐色（的）", s: "Brown eyes and brown hair are common in many people."},
+{id: 117, w: "brown", p: "n", d: "棕色，褐色", s: "Dark brown and light brown are different shades of brown."},
+{id: 118, w: "build", p: "v", d: "建造，修建", s: "They're building new houses by the river."},
+{id: 119, w: "building", p: "n", d: "建築物；房屋", s: "The once-empty site was now covered with buildings."},
+{id: 120, w: "bus", p: "n", d: "公車；大客車", s: "You should take the bus if you want to see the sights."},
+{id: 121, w: "business", p: "n", d: "買賣（貨品或服務）", s: "My brother's business is growing fast in the city now."},
+{id: 122, w: "busy", p: "adj", d: "忙碌的；忙於…的；專注的", s: "Mum was busy in the kitchen."},
+{id: 124, w: "butter", p: "n", d: "奶油", s: "We were served scones with butter and jam."},
+{id: 125, w: "buy", p: "v", d: "買，購買", s: "Eventually she had saved enough money to buy a small car."},
+{id: 126, w: "by", p: "prep", d: "（用於表示動作的施動者）被，由", s: "The motorcycle was driven by a tiny bald man."},
+{id: 128, w: "cafe", p: "n", d: "（一般不供應酒類的）小餐館，小飯館，咖啡館", s: "There's a little café on the corner that serves very good coffee."},
+{id: 129, w: "cake", p: "n", d: "蛋糕", s: "Would you like a piece of cake?"},
+{id: 130, w: "call", p: "v", d: "給…取名，給…命名；稱呼", s: "They've called the twins Edward and Thomas."},
+{id: 131, w: "call", p: "n", d: "通話；打電話", s: "I got a call from an old college friend last night."},
+{id: 132, w: "camera", p: "n", d: "照相機；攝像機", s: "I forgot my camera, so I could not take photos."},
+{id: 135, w: "capital", p: "n", d: "首都；首府；省會", s: "Canberra is the capital city of Australia today."},
+{id: 136, w: "capital", p: "adj", d: "大寫字母的", s: "Do you write \"Buddhism\" with a capital \"B\" or not?"},
+{id: 137, w: "car", p: "n", d: "汽車", s: "They do not have a car to drive to work."},
+{id: 138, w: "card", p: "n", d: "（一張）厚紙片，卡紙", s: "A piece of card is used for making cards."},
+{id: 139, w: "career", p: "n", d: "生涯，職業；事業", s: "He's hoping for a career in the police force."},
+{id: 140, w: "carrot", p: "n", d: "胡蘿蔔", s: "I like to eat grated carrot in my salad."},
+{id: 141, w: "carry", p: "v", d: "背；扛；抱；抬；搬；載", s: "Would you like me to carry your bag for you?"},
+{id: 142, w: "cat", p: "n", d: "貓", s: "I bought a tin of cat food for my pet."},
+{id: 144, w: "cent", p: "n", d: "美分；分幣", s: "A call will cost you around 25 cents."},
+{id: 145, w: "centre", p: "n", d: "中心點；中心，中央", s: "There was a large table in the centre of the room."},
+{id: 146, w: "century", p: "n", d: "一百年", s: "The city centre has scarcely changed in over a century."},
+{id: 147, w: "chair", p: "n", d: "椅子", s: "There are chairs around the table in the room."},
+{id: 148, w: "change", p: "v", d: "換，交換", s: "She has just changed her job to a new company."},
+{id: 149, w: "change", p: "n", d: "改變；改動；變化；變動", s: "Let me know if there's any change in the situation."},
+{id: 150, w: "chart", p: "n", d: "圖表；示意圖；曲線圖", s: "There is a chart on the wall showing children’s heights."},
+{id: 151, w: "cheap", p: "adj", d: "便宜的，不貴的", s: "I got a cheap flight at the last minute."},
+{id: 152, w: "check", p: "v", d: "檢查；核查，核對", s: "Always check your car’s oil, water, and tyres first."},
+{id: 153, w: "cheese", p: "n", d: "起司；乳酪；芝士", s: "Would you like a piece of cheese with your bread?"},
+{id: 154, w: "chicken", p: "n", d: "雞；雞肉", s: "A male chicken is a cock and a female is hen."},
+{id: 155, w: "child", p: "n", d: "兒童，小孩；兒子；女兒", s: "An eight-year-old child is playing happily in the park."},
+{id: 156, w: "chocolate", p: "n", d: "巧克力；巧克力糖", s: "I ate a bar of chocolate after school today."},
+{id: 157, w: "choose", p: "v", d: "選擇；挑選，選取；選中", s: "She had to choose between the two men in her life."},
+{id: 158, w: "cinema", p: "n", d: "電影院", s: "The town no longer has a cinema."},
+{id: 159, w: "city", p: "n", d: "市，城市", s: "Many of the world's cities have populations of more than five million."},
+{id: 160, w: "class", p: "n", d: "班；班級", s: "Which class are you in this year?"},
+{id: 161, w: "classroom", p: "n", d: "教室；課堂", s: "There are many classroom activities for students to enjoy."},
+{id: 162, w: "clean", p: "adj", d: "乾淨的；清潔的", s: "She wore a clean white shirt to school today."},
+{id: 163, w: "clean", p: "v", d: "把…弄乾淨；打掃；清潔；清洗", s: "I'm going to clean the windows this morning."},
+{id: 164, w: "climb", p: "v", d: "上升；攀升；爬升", s: "The plane climbed quickly to a height of 30,000 feet."},
+{id: 165, w: "clock", p: "n", d: "鐘錶，時鐘", s: "We have an antique clock on our mantelpiece."},
+{id: 166, w: "close", p: "v", d: "（使）關，合，關閉", s: "Could you close the door please?"},
+{id: 167, w: "clothes", p: "n", d: "衣服，衣物", s: "She usually wears smart clothes when she goes to work."},
+{id: 168, w: "club", p: "n", d: "俱樂部；社團", s: "I've just joined the local tennis club."},
+{id: 169, w: "coat", p: "n", d: "（通常指保暖的）外套，外衣，大衣", s: "Do your coat up, Joe, or you'll freeze."},
+{id: 170, w: "coffee", p: "n", d: "咖啡粉；咖啡", s: "I like to drink decaffeinated coffee in the evening."},
+{id: 171, w: "cold", p: "adj", d: "（尤指相對於體溫而言）冷的，寒冷的，溫度低的", s: "It was a cold day, so I wore a warm coat."},
+{id: 172, w: "cold", p: "n", d: "感冒，傷風", s: "I have a cold and need to rest at home today."},
+{id: 173, w: "college", p: "n", d: "學院；職業學校；技術學校；高等專科學校", s: "She studies at a teacher training college."},
+{id: 174, w: "colour", p: "n", d: "顏色", s: "What is your favourite colour for painting the walls?"},
+{id: 175, w: "come", p: "v", d: "（朝向或跟隨說話人）來，過來", s: "Are you coming with me to the park this afternoon?"},
+{id: 176, w: "common", p: "adj", d: "常見的；經常的；普遍的；普通的；平常的", s: "It's quite common to see couples who dress alike."},
+{id: 177, w: "company", p: "n", d: "公司", s: "He works for a software company."},
+{id: 178, w: "compare", p: "v", d: "對比，對照，比較", s: "Compare the two cars carefully to see which is better."},
+{id: 179, w: "complete", p: "adj", d: "全部的，完全的，完整的", s: "The complete works of Oscar Wilde are very popular."},
+{id: 180, w: "complete", p: "v", d: "完成；完工；結束", s: "He's just completed filming his 17th feature film."},
+{id: 181, w: "computer", p: "n", d: "電腦", s: "I have a personal computer at home."},
+{id: 182, w: "concert", p: "n", d: "音樂會", s: "They went to a classical concert last night."},
+{id: 183, w: "conversation", p: "n", d: "交談，談話，對話", s: "She had a strange conversation with the man who moved in upstairs."},
+{id: 184, w: "cook", p: "v", d: "做飯，烹調；燒，煮", s: "I don't cook meat very often."},
+{id: 185, w: "cooking", p: "n", d: "烹飪，做飯", s: "My mother always hated cooking when she was very young."},
+{id: 186, w: "cool", p: "adj", d: "涼的，冷的", s: "The water in the glass is cool and fresh."},
+{id: 187, w: "correct", p: "adj", d: "正確的，無誤的，對的", s: "She gave a correct answer to the teacher’s question today."},
+{id: 188, w: "correct", p: "v", d: "改正；更正；糾正", s: "Students said it was helpful if the teacher corrected their pronunciation."},
+{id: 189, w: "cost", p: "n", d: "價格；費用；成本", s: "The cost of the new computer includes software for free."},
+{id: 190, w: "cost", p: "v", d: "價錢為；需花費", s: "\"How much does this book cost?\" \"It costs £25.\""},
+{id: 192, w: "country", p: "n", d: "國家；國土", s: "What is the largest country in Europe?"},
+{id: 193, w: "course", p: "n", d: "課程；教程", s: "They're going away on a training course next week."},
+{id: 194, w: "cousin", p: "n", d: "堂（或表）兄弟；堂（或表）姐妹；遠房親戚", s: "My cousins and I are close because we are the same age."},
+{id: 195, w: "cow", p: "n", d: "母牛，奶牛", s: "A dairy cow gives milk on the farm."},
+{id: 196, w: "cream", p: "n", d: "忌廉，鮮奶油", s: "We ate strawberries and cream for dessert."},
+{id: 197, w: "create", p: "v", d: "創造；創建；創作；發明", s: "Charles Schulz created the characters \"Snoopy\" and \"Charlie Brown\"."},
+{id: 198, w: "culture", p: "n", d: "文化（尤指某一群體在某一時期普遍的風俗習慣和信仰）", s: "Youth culture is different in every country."},
+{id: 199, w: "cup", p: "n", d: "杯子（常帶有柄）", s: "She drank tea from a cup and saucer."},
+{id: 200, w: "customer", p: "n", d: "顧客，主顧，客戶", s: "A satisfied customer always returns to buy more products."},
+{id: 201, w: "cut", p: "v", d: "（尤指用刀）切，割，砍，剪，削，剁", s: "I cut a slice of bread with a sharp knife."},
+{id: 202, w: "dad", p: "n", d: "爸爸，爹爹", s: "Can you pick me up from the party tonight, Dad?"},
+{id: 203, w: "dance", p: "n", d: "舞蹈，舞步；舞曲", s: "The band played a slow dance."},
+{id: 204, w: "dance", p: "v", d: "跳（舞），舞蹈", s: "We danced all night at the party with many friends."},
+{id: 205, w: "dancer", p: "n", d: "舞蹈演員；跳舞者", s: "He's a dancer in the Royal Ballet."},
+{id: 206, w: "dancing", p: "n", d: "跳舞，舞蹈", s: "There was music and dancing till two in the morning."},
+{id: 207, w: "dangerous", p: "adj", d: "危險的，有威脅的；不安全的", s: "These dangerous chemicals can harm your health quickly."},
+{id: 208, w: "dark", p: "adj", d: "昏暗的，黑暗的", s: "It was too dark to see much."},
+{id: 209, w: "date", p: "n", d: "日期；日子", s: "What is today’s date on the calendar in your room?"},
+{id: 210, w: "daughter", p: "n", d: "女兒", s: "Liz and Phil have a daughter and three sons."},
+{id: 211, w: "day", p: "n", d: "一天，一日", s: "A day has twenty-four hours and many activities happen."},
+{id: 212, w: "dear", p: "adj", d: "親愛的，心愛的；可愛的", s: "She was a very dear friend."},
+{id: 213, w: "December", p: "n", d: "十二月", s: "My parents got married in December."},
+{id: 214, w: "decide", p: "v", d: "（尤指仔細考慮後）決定，決斷，確定", s: "They have to decide by next Friday."},
+{id: 215, w: "delicious", p: "adj", d: "美味的；（味道或氣味）誘人的", s: "This is a delicious cake that everyone likes."},
+{id: 216, w: "describe", p: "v", d: "描述，描寫，描繪", s: "Please describe your house so I can find it easily."},
+{id: 217, w: "description", p: "n", d: "描述，描寫，描繪", s: "Write a description of your favourite beach."},
+{id: 218, w: "design", p: "n", d: "設計（方法）；設計風格", s: "The basic design of the car is very similar to earlier models."},
+{id: 219, w: "design", p: "v", d: "設計；製（圖）", s: "She designs clothes that many people want to wear."},
+{id: 220, w: "desk", p: "n", d: "（常指帶抽屜的）書桌，辦公桌，寫字枱", s: "This is an office desk for working and writing."},
+{id: 221, w: "detail", p: "n", d: "消息；細節", s: "She told me every detail about her hospital experience."},
+{id: 222, w: "dialogue", p: "n", d: "對話，對白", s: "The play contained some very witty dialogue."},
+{id: 223, w: "dictionary", p: "n", d: "字典，詞典", s: "I have a French-English dictionary to help me learn."},
+{id: 224, w: "die", p: "v", d: "死去，死亡，過世", s: "Twelve people died in the accident."},
+{id: 225, w: "diet", p: "n", d: "（日常）飲食", s: "Diet varies between different countries in the world."},
+{id: 226, w: "difference", p: "n", d: "區別，差別，不同", s: "What's the difference between an ape and a monkey?"},
+{id: 227, w: "different", p: "adj", d: "不同的，不一樣的，有差別的", s: "She seems to wear something different every day."},
+{id: 228, w: "difficult", p: "adj", d: "困難的，費力的，艱難的", s: "This is a difficult problem to solve today."},
+{id: 229, w: "dinner", p: "n", d: "正餐（通常指晚餐，在英國有時指午餐）", s: "We were just having dinner together at home."},
+{id: 230, w: "dirty", p: "adj", d: "髒的，骯髒的", s: "Her face was dirty and tear-stained."},
+{id: 231, w: "discuss", p: "v", d: "討論，議論，談論", s: "The police want to discuss these recent racist attacks with local people."},
+{id: 232, w: "dish", p: "n", d: "碟子，盤子", s: "I put the food in an oven-proof dish to cook."},
+{id: 233, w: "doctor", p: "n", d: "醫生，大夫", s: "The doctor helps sick people get better every single day."},
+{id: 234, w: "dog", p: "n", d: "（尤指當作寵物或用來打獵、看護的）狗，犬", s: "I have a pet dog at home."},
+{id: 235, w: "dollar", p: "n", d: "（美國、加拿大、澳大利亞、紐西蘭等國的貨幣單位）元", s: "There are one hundred cents in a dollar."},
+{id: 236, w: "door", p: "n", d: "門", s: "I opened the front door to let him in."},
+{id: 237, w: "down", p: "adv", d: "在下面；向下，朝下", s: "Is this lift going down to the ground floor now?"},
+{id: 238, w: "down", p: "prep", d: "在下面；向下，朝下", s: "I slid down the hill quickly and enjoyed the fun."},
+{id: 239, w: "downstairs", p: "adv", d: "朝樓下，在樓下（尤指底層）", s: "I went downstairs to answer the phone."},
+{id: 240, w: "draw", p: "v", d: "畫，繪畫", s: "Jonathan can draw pictures of animals and beautiful flowers."},
+{id: 241, w: "dress", p: "n", d: "連衣裙", s: "I bought a long dress for the party."},
+{id: 242, w: "dress", p: "v", d: "穿衣服；給（尤指小孩）穿衣服", s: "My husband dresses the boys while I make breakfast."},
+{id: 243, w: "drink", p: "n", d: "飲料；一份（飲料）", s: "Would you like a drink of water?"},
+{id: 244, w: "drink", p: "v", d: "喝", s: "He drank three glasses of water."},
+{id: 245, w: "drive", p: "v", d: "開（車），駕駛", s: "I am learning to drive a car safely on the road."},
+{id: 246, w: "driver", p: "n", d: "司機", s: "A taxi driver helps people go to their places."},
+{id: 247, w: "during", p: "prep", d: "在…期間", s: "They work during the night and sleep by day."},
+{id: 250, w: "each", p: "adv", d: "各自，各個，每個", s: "They each lost forty dollars in the game yesterday evening."},
+{id: 251, w: "ear", p: "n", d: "耳，耳朵", s: "The hearing in my left ear's not so good."},
+{id: 252, w: "early", p: "adj", d: "早期的，初期的；在早期，在初期；提早（的），提前（的）", s: "The early morning is quiet and peaceful in the city."},
+{id: 253, w: "early", p: "adv", d: "早期的，初期的；在早期，在初期；提早（的），提前（的）", s: "If you finish early you can go home."},
+{id: 254, w: "east", p: "n", d: "東；東方", s: "In the morning, the sun rises in the east."},
+{id: 255, w: "east", p: "adj", d: "東方的；東部的；東邊的", s: "The east side of the city has many tall buildings."},
+{id: 256, w: "east", p: "adv", d: "向東，朝東", s: "We look east to see the sun in the morning."},
+{id: 257, w: "easy", p: "adj", d: "容易的；不費力的", s: "The exam was easy for all the students in class."},
+{id: 258, w: "eat", p: "v", d: "吃", s: "Do you eat breakfast every morning before you go school?"},
+{id: 259, w: "egg", p: "n", d: "（食用的）蛋（尤指雞蛋）", s: "I ate a hard-boiled egg for breakfast this morning."},
+{id: 263, w: "elephant", p: "n", d: "象，大象", s: "Measures must be taken to protect the world's depleted elephant population."},
+{id: 265, w: "else", p: "adv", d: "其他，另外，別的", s: "Everybody else has agreed except for you."},
+{id: 266, w: "email", p: "n", d: "電子郵件系統", s: "You can contact us by email or fax."},
+{id: 267, w: "email", p: "v", d: "給…發電子郵件", s: "Email me when you've got time."},
+{id: 268, w: "end", p: "n", d: "末端，盡頭", s: "This cable has a plug at one end and socket at other."},
+{id: 269, w: "end", p: "v", d: "（使）結束；（使）停止", s: "When is your meeting due to end?"},
+{id: 270, w: "enjoy", p: "v", d: "享受…的樂趣；喜愛；欣賞", s: "I really enjoy watching movies with my friends on weekends."},
+{id: 273, w: "enough", p: "adv", d: "足夠地；充分地；充足地", s: "I hadn't trained enough for the game."},
+{id: 274, w: "euro", p: "n", d: "(symbol €) 歐元", s: "I paid five euros for it."},
+{id: 275, w: "even", p: "adv", d: "（用來表示令人驚訝、不同尋常、出乎意料或極端的事物）甚至，連，即使", s: "I don't even know where it is."},
+{id: 276, w: "evening", p: "n", d: "傍晚；晚上", s: "It was a chilly evening with cold wind outside."},
+{id: 277, w: "event", p: "n", d: "（尤指重大或不尋常的）事情，事件", s: "This year's Olympic Games will be the biggest ever sporting event."},
+{id: 278, w: "ever", p: "adv", d: "在任何時候；從來", s: "Nothing ever happens here in the evening."},
+{id: 283, w: "exam", p: "n", d: "考試", s: "American students ranked fourth in those taking the geography exam."},
+{id: 284, w: "example", p: "n", d: "典型；範例；實例", s: "Could you give me an example of the improvements you have mentioned?"},
+{id: 285, w: "excited", p: "adj", d: "興奮的；激動的", s: "Are you getting excited about your holiday?"},
+{id: 286, w: "exciting", p: "adj", d: "令人興奮的；使人激動的；刺激的", s: "This is an exciting movie with a great soundtrack."},
+{id: 287, w: "exercise", p: "n", d: "體育活動；鍛鍊；運動", s: "Swimming is my favourite form of exercise."},
+{id: 288, w: "exercise", p: "v", d: "鍛鍊；運動", s: "She exercises most evenings usually by running."},
+{id: 289, w: "expensive", p: "adj", d: "昂貴的；用錢多的；價格高的", s: "Rolls Royces are very expensive cars that many people want."},
+{id: 290, w: "explain", p: "v", d: "解釋；說明；闡明", s: "If there's anything you don't understand, I'll be happy to explain."},
+{id: 291, w: "extra", p: "adj", d: "額外的；附加的", s: "If you need any extra help, just call me."},
+{id: 292, w: "eye", p: "n", d: "眼睛", s: "He has no sight in his left eye."},
+{id: 293, w: "face", p: "n", d: "臉，面孔", s: "She has a long, thin face."},
+{id: 294, w: "fact", p: "n", d: "現實，實際情況；（尤指）事實，真相", s: "No decision will be made until we know all the facts."},
+{id: 295, w: "fall", p: "v", d: "（突然）跌倒，摔倒", s: "The path's very steep, so be careful you don't fall."},
+{id: 296, w: "false", p: "adj", d: "假的；人工的", s: "False eyelashes and false teeth are artificial."},
+{id: 297, w: "family", p: "n", d: "家，家庭", s: "A new family has moved in next door."},
+{id: 298, w: "family", p: "adj", d: "家的，家庭的", s: "Family life is important for everyone."},
+{id: 299, w: "famous", p: "adj", d: "著名的，出名的，有名的", s: "She is a famous actress known all over the world."},
+{id: 300, w: "fantastic", p: "adj", d: "極好的", s: "You look fantastic in that dress."},
+{id: 301, w: "far", p: "adv", d: "遠；遙遠地；久遠地", s: "How far is it from Australia to New Zealand?"},
+{id: 302, w: "farm", p: "n", d: "農場", s: "A farm is a place where people grow plants and animals."},
+{id: 303, w: "farmer", p: "n", d: "農場主；養殖場主；農人", s: "A dairy farmer takes care of cows and milk production."},
+{id: 304, w: "fast", p: "adj", d: "快的；迅速的；敏捷的", s: "Fast cars can move very quickly on the road."},
+{id: 305, w: "fast", p: "adv", d: "快速地；迅速地", s: "The accident was caused by people driving too fast in bad conditions."},
+{id: 306, w: "fat", p: "adj", d: "胖的，肥胖的", s: "Like most women, she thinks she's fat."},
+{id: 307, w: "father", p: "n", d: "父親，爸爸", s: "My father took me to watch the football every Saturday."},
+{id: 308, w: "favourite", p: "adj", d: "最喜歡的；特別喜愛的", s: "What is your favourite colour? Mine is green."},
+{id: 309, w: "favourite", p: "n", d: "最喜歡的東西；特別喜愛的東西", s: "Chocolate chip cookies are my favourite snack to eat daily."},
+{id: 310, w: "February", p: "n", d: "二月", s: "Construction is expected to start in February."},
+{id: 311, w: "feel", p: "v", d: "覺得；感到；體會到", s: "How are you feeling? Not too bad, but I have a headache."},
+{id: 312, w: "feeling", p: "n", d: "（感官的）感覺", s: "I had a tingling feeling in my fingers."},
+{id: 313, w: "festival", p: "n", d: "節日；節期", s: "A festival is a special day for people to celebrate together."},
+{id: 319, w: "fill", p: "v", d: "（使）充滿，（使）裝滿，（使）注滿；佔據；布滿", s: "I filled the bucket with water."},
+{id: 320, w: "film", p: "n", d: "電影；影片", s: "What is your favourite film to watch on a weekend?"},
+{id: 321, w: "final", p: "adj", d: "最後的，最終的", s: "A final warning means it is the last chance."},
+{id: 322, w: "find", p: "v", d: "（偶然）發現，碰上；找到，尋得；找出，查明", s: "I've just found a ten-pound note in my pocket."},
+{id: 323, w: "fine", p: "adj", d: "好的；夠好的；健康的，身體好的", s: "I felt terrible last night but I feel fine this morning."},
+{id: 324, w: "finish", p: "v", d: "完成；（使）完結", s: "I'll call you when I've finished my homework."},
+{id: 325, w: "fire", p: "n", d: "火；（燃燒著的）燃料，柴火", s: "Animals are usually afraid of fire."},
+{id: 327, w: "first", p: "adv", d: "第一，首先", s: "Tom came first in the race."},
+{id: 328, w: "fish", p: "n", d: "魚；魚肉", s: "Several large fish live in the pond."},
+{id: 330, w: "flat", p: "n", d: "公寓房", s: "I live in a furnished flat near the park."},
+{id: 331, w: "flight", p: "n", d: "空中航行，航程", s: "I'll never forget my first flight."},
+{id: 332, w: "floor", p: "n", d: "（房間的）地板，地面", s: "The floor was partly covered with a dirty old rug."},
+{id: 333, w: "flower", p: "n", d: "花；開花植物", s: "Wild flowers grow in the fields during spring."},
+{id: 334, w: "fly", p: "v", d: "（鳥、昆蟲或飛機）飛，飛行", s: "The poor bird couldn't fly because it had a broken wing."},
+{id: 335, w: "follow", p: "v", d: "跟隨；跟著", s: "A dog followed us home after we left the park today."},
+{id: 336, w: "food", p: "n", d: "食物；食品；（供植物生長的）養料", s: "Baby food is soft and easy for infants to eat."},
+{id: 337, w: "foot", p: "n", d: "（人或動物的）腳，足", s: "I have a blister on my left foot from new shoes."},
+{id: 338, w: "football", p: "n", d: "足球（運動）", s: "A football player scored a goal in the match."},
+{id: 339, w: "for", p: "prep", d: "（表示給予的物件）給", s: "There's a phone message for you."},
+{id: 340, w: "forget", p: "v", d: "忘記，遺忘", s: "I'm sorry, I've forgotten your name."},
+{id: 341, w: "form", p: "n", d: "類型；種類；形式", s: "All the millions of different life forms live on Earth."},
+{id: 342, w: "form", p: "v", d: "（使）出現，（使）形成，（使）産生", s: "A crowd formed around the accident."},
+{id: 347, w: "free", p: "adj", d: "自由的；無拘束的", s: "Am I free to leave now?"},
+{id: 348, w: "Friday", p: "n", d: "星期五", s: "Shall we go to the theatre on Friday?"},
+{id: 349, w: "friend", p: "n", d: "朋友，友人", s: "She is my best friend and we have known each other long."},
+{id: 350, w: "friendly", p: "adj", d: "友好的，友善的", s: "A friendly smile makes people feel happy and welcome."},
+{id: 351, w: "from", p: "prep", d: "（表示起始點）從…開始，始於", s: "What time does the flight from Amsterdam arrive?"},
+{id: 352, w: "front", p: "n", d: "前面；正面", s: "The front of the museum is very impressive."},
+{id: 353, w: "front", p: "adj", d: "前面的；前部的", s: "One of his front teeth is missing."},
+{id: 354, w: "fruit", p: "n", d: "水果", s: "Apricots are the one fruit I don't like."},
+{id: 355, w: "full", p: "adj", d: "（容器或空間）裝滿的，充滿的", s: "This cup is very full so be careful with it."},
+{id: 356, w: "fun", p: "n", d: "樂趣；快樂；享受", s: "We had so much fun playing games at the party yesterday."},
+{id: 357, w: "funny", p: "adj", d: "滑稽的；有趣的", s: "Do you know any funny jokes?"},
+{id: 358, w: "future", p: "n", d: "將來，未來，今後", s: "Sometimes I worry about the future."},
+{id: 359, w: "game", p: "n", d: "（尤指兒童玩的）遊戲，運動；遊戲用具，運動器具", s: "A board game is fun to play with friends."},
+{id: 360, w: "garden", p: "n", d: "（住宅旁的）花園", s: "Garden tools and furniture help us care for plants."},
+{id: 361, w: "geography", p: "n", d: "地理；地理學", s: "Recent work in economic geography is very interesting."},
+{id: 362, w: "get", p: "v", d: "獲得，得到；買到；賺得，贏得", s: "He went to the shop to get some milk."},
+{id: 363, w: "girl", p: "n", d: "（尤指學齡階段的）女孩，姑娘", s: "Two girls showed us round the classrooms."},
+{id: 364, w: "girlfriend", p: "n", d: "女朋友，女情人", s: "His girlfriend is very kind and always helps her friends."},
+{id: 365, w: "give", p: "v", d: "送給；提供；贈與；給予", s: "She gave us a set of saucepans as a wedding present."},
+{id: 366, w: "glass", p: "n", d: "玻璃", s: "Broken glass can be dangerous to touch."},
+{id: 367, w: "go", p: "v", d: "去；走", s: "We go to the park every Sunday to play and relax."},
+{id: 368, w: "good", p: "adj", d: "令人滿意的；令人愉快的；合意的；有趣的", s: "A good book can make you happy and relaxed."},
+{id: 370, w: "grandfather", p: "n", d: "（外）祖父", s: "Her grandfather on her mother's side was Italian."},
+{id: 371, w: "grandmother", p: "n", d: "（外）祖母", s: "Both my grandmothers were from Scotland."},
+{id: 372, w: "grandparent", p: "n", d: "（外）祖父；（外）祖母", s: "The children are very attached to their grandparents."},
+{id: 373, w: "great", p: "adj", d: "大量的；巨大的；強烈的", s: "An enormous great hole was in the ground."},
+{id: 374, w: "green", p: "adj", d: "綠色的，草綠色的", s: "Green vegetables are good for your health."},
+{id: 375, w: "green", p: "n", d: "綠色，草綠色", s: "Light green is a soft and pleasant colour."},
+{id: 376, w: "grey", p: "adj", d: "灰色的，灰白色的", s: "The sky is grey today and looks very cloudy."},
+{id: 377, w: "grey", p: "n", d: "灰色，灰白色", s: "The cat has soft grey fur that feels very smooth and warm."},
+{id: 378, w: "group", p: "n", d: "組；群；批；簇", s: "I'm meeting a group of friends for dinner tonight."},
+{id: 379, w: "grow", p: "v", d: "增多；增大；增強；增長；成長；長大", s: "Plants grow taller when they get enough sunlight and water daily."},
+{id: 380, w: "guess", p: "v", d: "猜測，推測，估計", s: "I didn't know the answer, so I had to guess."},
+{id: 381, w: "guess", p: "n", d: "猜測，推測，估計", s: "Can you guess what I am thinking about right now today?"},
+{id: 382, w: "guitar", p: "n", d: "吉他，六弦琴", s: "He sat on the grass, strumming his guitar."},
+{id: 383, w: "gym", p: "n", d: "（尤指作為學校課程的）體操，健身操", s: "I wear gym clothes when I exercise at school."},
+{id: 384, w: "hair", p: "n", d: "（人的）頭髮；（人或動物的）汗毛，毛髮", s: "Her hair is long and brown, shining in the bright sunlight."},
+{id: 385, w: "half", p: "n", d: "一半，半", s: "One and a half hours are allowed for the exam."},
+{id: 387, w: "hand", p: "n", d: "手", s: "All their toys are made by hand."},
+{id: 388, w: "happen", p: "v", d: "發生", s: "No one knows exactly what happened but several people have been hurt."},
+{id: 389, w: "happy", p: "adj", d: "幸福的，滿意的，快樂的", s: "A happy marriage brings joy to many people."},
+{id: 390, w: "hard", p: "adj", d: "堅硬的，堅固的", s: "A hard surface is difficult to break or change."},
+{id: 391, w: "hard", p: "adv", d: "費勁地，努力地，艱難地", s: "Work hard and play hard, that's my motto."},
+{id: 392, w: "hat", p: "n", d: "帽子", s: "I bought a straw hat for the sunny day."},
+{id: 393, w: "hate", p: "v", d: "憎恨，憎惡，厭惡", s: "I hate waiting for the bus when it is very cold outside."},
+{id: 394, w: "have", p: "v", d: "有，擁有", s: "They have two cats and a dog living in their small house."},
+{id: 397, w: "head", p: "n", d: "頭部", s: "Put this hat on to keep your head warm."},
+{id: 398, w: "health", p: "n", d: "身體狀況，健康", s: "To be in good health, you must eat well."},
+{id: 399, w: "healthy", p: "adj", d: "強壯的，健康的", s: "She is a healthy girl who loves to run and play outside."},
+{id: 400, w: "hear", p: "v", d: "聽見，聽到", s: "I hear the birds singing early every morning near my window."},
+{id: 402, w: "help", p: "v", d: "幫助，幫忙", s: "Can you help me carry these heavy bags to the car?"},
+{id: 403, w: "help", p: "n", d: "幫助，幫忙", s: "Do you need any help with those boxes?"},
+{id: 406, w: "here", p: "adv", d: "在這裡；到這裡", s: "I've lived here for about two years."},
+{id: 409, w: "high", p: "adj", d: "（尤指無生命的東西）高的，有…高的", s: "The building is very high and touches the blue sky."},
+{id: 412, w: "history", p: "n", d: "歷史；歷史學", s: "I studied modern European history at college."},
+{id: 413, w: "hobby", p: "n", d: "業餘愛好，嗜好", s: "Angela's hobby is restoring vintage motorcycles."},
+{id: 414, w: "holiday", p: "n", d: "假期，假日", s: "I went on a skiing holiday last winter."},
+{id: 415, w: "home", p: "n", d: "家，住宅", s: "The senator has a home in Washington and another in Colorado."},
+{id: 416, w: "home", p: "adv", d: "在家；回家，到家", s: "Don't worry, I'll be home soon."},
+{id: 417, w: "homework", p: "n", d: "功課", s: "You can't watch TV until you've done your homework."},
+{id: 418, w: "hope", p: "v", d: "希望，盼望", s: "I'm hoping for an interview next week."},
+{id: 419, w: "horse", p: "n", d: "馬", s: "I like to ride a horse on the farm."},
+{id: 420, w: "hospital", p: "n", d: "醫院", s: "The children were taken to a children's hospital for care."},
+{id: 421, w: "hot", p: "adj", d: "熱的；溫度高的", s: "It is a hot day, so we should drink plenty of water."},
+{id: 422, w: "hotel", p: "n", d: "賓館，飯店", s: "We stayed in a four-star hotel during our trip."},
+{id: 423, w: "hour", p: "n", d: "小時", s: "The exam lasted an hour and a half."},
+{id: 424, w: "house", p: "n", d: "房屋，住宅", s: "They live in a detached house near the park."},
+{id: 425, w: "how", p: "adv", d: "如何，怎麼", s: "How do we get to the town from here?"},
+{id: 426, w: "however", p: "adv", d: "不管怎樣，無論如何", s: "However hungry I am, I never finish a whole pizza."},
+{id: 428, w: "hungry", p: "adj", d: "饑餓的", s: "By four o'clock I was really hungry and wanted food."},
+{id: 429, w: "husband", p: "n", d: "丈夫", s: "Her husband works in the city and comes home every evening."},
+{id: 431, w: "ice", p: "n", d: "冰；冰塊", s: "The pond was covered in ice all winter."},
+{id: 432, w: "ice cream", p: "n", d: "冰淇淋", s: "I ate a tub of ice cream after dinner yesterday."},
+{id: 433, w: "idea", p: "n", d: "意見，想法，主意；計劃", s: "I've had an idea - why don't we go to the coast?"},
+{id: 435, w: "imagine", p: "v", d: "想像；設想", s: "Imagine Robert Redford when he was young; John looks like him."},
+{id: 436, w: "important", p: "adj", d: "必需的；重要的；珍貴的", s: "I think his career is more important to him than I am."},
+{id: 437, w: "improve", p: "v", d: "改進，改善", s: "He did a lot to improve conditions for factory workers."},
+{id: 438, w: "in", p: "prep", d: "在（…）裡面，在（…）內", s: "Is Mark still in bed or has he already left the house?"},
+{id: 439, w: "in", p: "adv", d: "從外面；朝中間；朝裡", s: "Could you bring the clothes in for me?"},
+{id: 440, w: "include", p: "v", d: "包含；包括", s: "The bill includes tax and service."},
+{id: 441, w: "information", p: "n", d: "情報；資料；消息", s: "Do you have any information about train times?"},
+{id: 442, w: "interest", p: "n", d: "興趣，關注", s: "I've always had an interest in astronomy."},
+{id: 443, w: "interest", p: "v", d: "使…感興趣", s: "Sport has never really interested me."},
+{id: 444, w: "interested", p: "adj", d: "感興趣的；關注的", s: "He didn't seem very interested in what I was saying."},
+{id: 445, w: "interesting", p: "adj", d: "有趣的，引起興趣的", s: "She told an interesting story that made everyone laugh and smile."},
+{id: 446, w: "internet", p: "n", d: "網際網路，國際互聯網", s: "I found out about the bombings from the internet."},
+{id: 447, w: "interview", p: "n", d: "面試；面談", s: "I have a job interview tomorrow morning."},
+{id: 448, w: "interview", p: "v", d: "採訪；對…進行面試；訊問", s: "We will interview ten people for the job next week at noon."},
+{id: 449, w: "into", p: "prep", d: "進入，到…裡面", s: "Would you put the jar back into the cupboard for me, please?"},
+{id: 450, w: "introduce", p: "v", d: "介紹，引見", s: "I'd like to introduce my son, Mark."},
+{id: 451, w: "island", p: "n", d: "島，島嶼", s: "The island is a small desert island in the ocean."},
+{id: 454, w: "jacket", p: "n", d: "短上衣；夾克", s: "I bought a leather jacket yesterday."},
+{id: 455, w: "January", p: "n", d: "一月", s: "Her father died in January last year during winter."},
+{id: 456, w: "jeans", p: "n", d: "牛仔褲", s: "I am wearing jeans and a T-shirt today."},
+{id: 457, w: "job", p: "n", d: "工作；職業；職位", s: "He found a temporary job last summer."},
+{id: 458, w: "join", p: "v", d: "連接；接合", s: "A long suspension bridge joins the two islands."},
+{id: 459, w: "journey", p: "n", d: "（尤指搭乘交通工具的）旅行，行程", s: "I love going on long journeys."},
+{id: 460, w: "juice", p: "n", d: "（水果、蔬菜的）汁，液", s: "I like to drink orange juice every morning."},
+{id: 461, w: "July", p: "n", d: "七月", s: "The film festival is in July."},
+{id: 462, w: "June", p: "n", d: "六月", s: "A lot of people get married in June."},
+{id: 463, w: "just", p: "adv", d: "此時；很快；剛才", s: "\"Where are you, Jim?\" \"I'm just coming.\""},
+{id: 464, w: "keep", p: "v", d: "保有；保存；保留", s: "Do you want this photograph back or can I keep it?"},
+{id: 465, w: "key", p: "n", d: "鎖匙", s: "I lost my car keys yesterday."},
+{id: 466, w: "key", p: "adj", d: "極重要的，關鍵性的", s: "She was a key figure in the international art world."},
+{id: 467, w: "kilometre", p: "n", d: "千米，公里", s: "He walks two kilometres to work every morning."},
+{id: 468, w: "kind", p: "n", d: "種類", s: "What kind of job are you looking for?"},
+{id: 469, w: "kitchen", p: "n", d: "廚房", s: "We usually eat breakfast in the kitchen."},
+{id: 470, w: "know", p: "v", d: "知道，熟悉，了解", s: "\"Where did he go?\" \"I don't know.\""},
+{id: 471, w: "land", p: "n", d: "陸地，地面", s: "It is cheaper to drill for oil on land than at sea."},
+{id: 472, w: "language", p: "n", d: "語言", s: "She does research into how children acquire language."},
+{id: 473, w: "large", p: "adj", d: "大的；大規模的；大量的", s: "They live in a large house near the city center."},
+{id: 475, w: "late", p: "adj", d: "遲的，晚的；延遲的", s: "This train is always late and makes me very upset."},
+{id: 476, w: "late", p: "adv", d: "遲的，晚的；延遲的", s: "I got up late this morning and missed the bus."},
+{id: 477, w: "later", p: "adv", d: "晚些時候；過些時間", s: "He'll be back later after finishing his work at school."},
+{id: 478, w: "laugh", p: "v", d: "（出聲地）笑，大笑", s: "They laughed loudly at her funny jokes during the party."},
+{id: 479, w: "laugh", p: "n", d: "笑；笑聲", s: "She had a loud laugh at the party."},
+{id: 480, w: "learn", p: "v", d: "學，學習", s: "They learn Russian at school every day with their teacher."},
+{id: 481, w: "leave", p: "v", d: "離開；離去；走開", s: "I'll be leaving at five o'clock tomorrow."},
+{id: 482, w: "left", p: "adj", d: "左邊的，左側的", s: "His left eye was heavily bandaged."},
+{id: 483, w: "left", p: "adv", d: "左邊的，左側的", s: "Turn left at the lights and then walk straight ahead."},
+{id: 484, w: "left", p: "n", d: "左邊，左側", s: "First I'll introduce the speaker sitting on my left."},
+{id: 485, w: "leg", p: "n", d: "腿，腿部", s: "My legs were tired after so much walking."},
+{id: 486, w: "lesson", p: "n", d: "（一節）課", s: "How can we make science lessons more interesting?"},
+{id: 487, w: "let", p: "v", d: "讓；允許；准許", s: "She wanted to go but her parents wouldn't let her."},
+{id: 488, w: "letter", p: "n", d: "信，信件", s: "I got a letter from the bank this morning."},
+{id: 489, w: "library", p: "n", d: "圖書館；閱覽室", s: "The library is a quiet place to read books."},
+{id: 490, w: "lie", p: "v", d: "躺；平躺；平臥", s: "I like to lie in bed and read books."},
+{id: 491, w: "life", p: "n", d: "壽命；生命；一生，人生；生活；性命", s: "Life's too short to worry about money!"},
+{id: 492, w: "light", p: "n", d: "光，光亮，光線", s: "Light was streaming in through the open door."},
+{id: 493, w: "light", p: "adj", d: "輕的；輕便的", s: "\"Here, take this bag - it's quite light.\""},
+{id: 494, w: "like", p: "prep", d: "像；與…相似，與…近似", s: "He looks like his brother who lives in another city."},
+{id: 495, w: "like", p: "v", d: "喜歡，喜愛", s: "I like your new haircut; it looks very nice today."},
+{id: 496, w: "line", p: "n", d: "線，線條", s: "Draw a straight line on the paper."},
+{id: 497, w: "lion", p: "n", d: "獅，獅子", s: "A lion is the king of the wild animals."},
+{id: 498, w: "list", p: "n", d: "名單，目錄；清單", s: "I wrote a shopping list before going to the store."},
+{id: 499, w: "list", p: "v", d: "將…列成單子；把…列入名單", s: "I've listed some useful reading material on the handout."},
+{id: 500, w: "listen", p: "v", d: "聽，傾聽", s: "What kind of music do you listen to?"},
+{id: 501, w: "little", p: "adj", d: "小的；比較小的", s: "She gave a little laugh when she heard the funny story."},
+{id: 503, w: "live", p: "v", d: "住；居住", s: "Where do you live now after moving from your old home?"},
+{id: 504, w: "local", p: "adj", d: "當地的，本地的", s: "People speak with a local accent in this town."},
+{id: 505, w: "long", p: "adj", d: "（長度或距離）長的", s: "She had long dark hair that reached down to her waist."},
+{id: 506, w: "long", p: "adv", d: "長期地；長久地", s: "Have you been here long or just arrived a few minutes ago?"},
+{id: 507, w: "look", p: "v", d: "看，瞧，注視", s: "Look at the sky; the stars are shining very brightly tonight."},
+{id: 508, w: "lose", p: "v", d: "丟失，遺失", s: "I've lost my ticket and cannot find it anywhere in my bag."},
+{id: 511, w: "lot", p: "adv", d: "很，非常", s: "I'm feeling a lot better today."},
+{id: 512, w: "love", p: "n", d: "愛；愛戀；愛情；熱愛", s: "\"I've been seeing him over a year now.\" \"Is it love?\""},
+{id: 513, w: "love", p: "v", d: "愛，喜愛", s: "I love you very much and want to spend time together."},
+{id: 514, w: "lunch", p: "n", d: "午餐，午飯", s: "What's for lunch today? I am very hungry and ready to eat."},
+{id: 515, w: "machine", p: "n", d: "機器；機械裝置", s: "The different sizes of eggs are sorted by a machine."},
+{id: 516, w: "magazine", p: "n", d: "雜誌，期刊", s: "She has written articles for several women's magazines."},
+{id: 517, w: "main", p: "adj", d: "主要的；最重要的；最大的", s: "The main thing is not to worry."},
+{id: 518, w: "make", p: "v", d: "做；製作；製造", s: "Do you want me to make some coffee?"},
+{id: 519, w: "man", p: "n", d: "成年男子，男人", s: "A tall man is waiting outside the door."}
+    ];
+
+    let questionBank = [];
+
+    // Helper to find the actual word form in the sentence
+    function preprocessQuestions() {
+        questionBank = rawData.map(item => {
+            let cleanSentence = item.s.replace(/^"|"$/g, '').replace(/""/g, '"');
+            let baseForm = item.w;
+            
+            let matchedWord = baseForm;
+
+            // Try to find the conjugated form in the sentence
+            const tokens = cleanSentence.split(/[\s,.!?;:()"]+/);
+            
+            // Strategy 0: Check for multi-word phrases first
+            const phraseRegex = new RegExp(`\\b${baseForm.replace(/[-\/\\^$*+?.()|[]{}]/g, '\\$&')}\\b`, 'i');
+            const phraseMatch = cleanSentence.match(phraseRegex);
+            
+            if (phraseMatch) {
+                matchedWord = phraseMatch[0];
+            } else {
+                // Strategy 1: Look for word starting with base
+                let found = tokens.find(t => t.toLowerCase().startsWith(baseForm.toLowerCase()));
+                
+                // Strategy 2: If not found, and base ends in 'e', look for base minus 'e'
+                if (!found && baseForm.endsWith('e')) {
+                    let stem = baseForm.slice(0, -1);
+                    found = tokens.find(t => t.toLowerCase().startsWith(stem.toLowerCase()));
+                }
+
+                // Strategy 3: If not found, and base ends in 'y', look for base minus 'y'
+                if (!found && baseForm.endsWith('y')) {
+                    let stem = baseForm.slice(0, -1);
+                    found = tokens.find(t => t.toLowerCase().startsWith(stem.toLowerCase()));
+                }
+                
+                // Strategy 4: Check irregular verbs map
+                if (!found && irregularVerbs[baseForm]) {
+                    const forms = irregularVerbs[baseForm];
+                    // Check v2 (past)
+                    if (forms.v2) {
+                        found = tokens.find(t => t.toLowerCase() === forms.v2.toLowerCase());
+                    }
+                    // Check v3 (participle) if not found yet
+                    if (!found && forms.v3) {
+                        found = tokens.find(t => t.toLowerCase() === forms.v3.toLowerCase());
+                    }
+                }
+
+                // Strategy 5: Exact match check (fallback)
+                if (!found) {
+                     found = tokens.find(t => t.toLowerCase() === baseForm.toLowerCase());
+                }
+
+                if (found) {
+                    matchedWord = found.replace(/[^a-zA-Z-]$/g, '');
+                }
+            }
+
+            return {
+                word: matchedWord,
+                baseForm: baseForm,
+                pos: item.p,
+                definition_ch: item.d.replace(/^"|"$/g, ''),
+                sentence: cleanSentence
+            };
+        });
+    }
+
+    function createBlanks(bank) {
+        bank.forEach(q => {
+            const escapedWord = q.word.replace(/[.*+?^${}()|[]]/g, '\\$&'); 
+            // Removed 'g' flag to only replace the first instance
+            const regex = new RegExp(`\\b${escapedWord}\\b`, 'i');
+            
+            if (regex.test(q.sentence)) {
+                q.sentence = q.sentence.replace(regex, '_______');
+            } else {
+                 const lowerSentence = q.sentence.toLowerCase();
+                 const lowerWord = q.word.toLowerCase();
+                 const index = lowerSentence.indexOf(lowerWord);
+                 if (index !== -1) {
+                     q.sentence = q.sentence.substring(0, index) + '_______' + q.sentence.substring(index + lowerWord.length);
+                 }
+            }
+        });
+        return bank;
+    }
+
+    function correctIndefiniteArticles(bank) {
+        const articleRegex = /(?<!\/)\b(a|an)\s+_______/gi;
+        const replacement = 'a/an _______';
+
+        bank.forEach(question => {
+            if (question.sentence.startsWith('A _______')) {
+                question.sentence = question.sentence.replace('A _______', 'A/An _______');
+            } else if (question.sentence.startsWith('An _______')) {
+                question.sentence = question.sentence.replace('An _______', 'A/An _______');
+            } else {
+                question.sentence = question.sentence.replace(articleRegex, replacement);
+            }
+        });
+        return bank;
+    }
+
+    preprocessQuestions();
+    questionBank = createBlanks(questionBank);
+    questionBank = correctIndefiniteArticles(questionBank);
+
+    const startScreen = document.getElementById('start-screen');
+    const quizScreen = document.getElementById('quiz-screen');
+    const endScreen = document.getElementById('end-screen');
+    const questionCounter = document.getElementById('question-counter');
+    const scoreCounter = document.getElementById('score-counter');
+    const questionText = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const feedbackContainer = document.getElementById('feedback-container');
+    const nextBtn = document.getElementById('next-btn');
+    const finalScore = document.getElementById('final-score');
+    const endComment = document.getElementById('end-comment');
+    const restartBtn = document.getElementById('restart-btn');
+    const returnBtn = document.getElementById('return-btn');
+    const revisionContainer = document.getElementById('revision-container');
+    const revisionList = document.getElementById('revision-list');
+
+    let currentQuestions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let questionsToAttempt = 0;
+    let answeredIncorrectly = false;
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    function startGame(num) {
+        questionsToAttempt = Math.min(num, questionBank.length);
+        score = 0;
+        currentQuestionIndex = 0;
+        const shuffledBank = shuffleArray([...questionBank]);
+        currentQuestions = shuffledBank.slice(0, questionsToAttempt);
+
+        revisionContainer.style.display = 'none';
+        startScreen.style.display = 'none';
+        endScreen.style.display = 'none';
+        quizScreen.style.display = 'block';
+
+        displayQuestion();
+    }
+
+    function displayQuestion() {
+        answeredIncorrectly = false;
+        feedbackContainer.textContent = '';
+        nextBtn.style.display = 'none';
+        nextBtn.textContent = "Next Question"; 
+        const question = currentQuestions[currentQuestionIndex];
+
+        questionCounter.textContent = `Question: ${currentQuestionIndex + 1} / ${questionsToAttempt}`;
+        scoreCounter.textContent = `Score: ${score}`;
+
+        const blankSpan = `<span class="blank"></span>`;
+        const sentence = question.sentence.replace('_______', blankSpan);
+        questionText.innerHTML = sentence;
+
+        const cleanSentence = question.sentence.trim().replace(/^['"“]+/, '');
+        const isStartOfSentence = cleanSentence.startsWith('_______');
+
+        const correctOption = question;
+        const distractors = getDistractors(correctOption);
+
+        const options = shuffleArray([correctOption, ...distractors]);
+
+        optionsContainer.innerHTML = '';
+        options.forEach(option => {
+            const button = document.createElement('button');
+            
+            let displayWord = option.word;
+            if (isStartOfSentence) {
+                displayWord = displayWord.charAt(0).toUpperCase() + displayWord.slice(1);
+            }
+
+            button.textContent = displayWord;
+            button.classList.add('option-btn');
+            button.dataset.word = option.word;
+            button.dataset.baseForm = option.baseForm;
+            button.dataset.pos = option.pos;
+            button.dataset.definition = option.definition_ch;
+            button.addEventListener('click', checkAnswer);
+            optionsContainer.appendChild(button);
+        });
+    }
+
+    function conjugate(base, inflection) {
+        if (!inflection || base === inflection) return base;
+
+        // 1. Handle Irregular Verbs
+        if (irregularVerbs[base]) {
+            // If specifically asking for v2/v3
+            if (inflection === 'v2') return irregularVerbs[base].v2;
+            if (inflection === 'v3') return irregularVerbs[base].v3;
+            
+            // If asking for 'ed'/'d' (past/participle context), return v2 (or v3)
+            // This prevents "gived" -> "gave", "losed" -> "lost"
+            if (inflection === 'ed' || inflection === 'd') {
+                return irregularVerbs[base].v2; 
+            }
+        }
+
+        // 2. Handle Regular Verbs receiving 'v2' or 'v3' requests
+        // If we are asking for v2/v3 of a regular verb, treat it as 'ed'
+        if ((inflection === 'v2' || inflection === 'v3') && !irregularVerbs[base]) {
+            inflection = 'ed'; // Fall through to standard 'ed' logic
+        }
+
+        // 3. Standard Suffix Logic
+        const vowels = "aeiou";
+        const lastChar = base.slice(-1);
+        const secondLastChar = base.slice(-2, -1);
+
+        if (inflection === 's') {
+            // Check irregular plurals first
+            if (irregularPlurals[base]) {
+                return irregularPlurals[base];
+            }
+
+            // Special cases for common verbs
+            if (base === 'have') return 'has';
+            if (base === 'do') return 'does';
+            if (base === 'go') return 'goes';
+
+            if (lastChar === 'y' && !vowels.includes(secondLastChar)) {
+                return base.slice(0, -1) + 'ies';
+            }
+            if (['s', 'x', 'z', 'o'].includes(lastChar) || ['sh', 'ch'].includes(base.slice(-2))) {
+                return base + 'es';
+            }
+            return base + 's';
+        }
+
+        if (inflection === 'd' || inflection === 'ed') {
+            if (lastChar === 'e') {
+                return base + 'd';
+            }
+            if (lastChar === 'y' && !vowels.includes(secondLastChar)) {
+                return base.slice(0, -1) + 'ied';
+            }
+            if (base.length > 1 && !vowels.includes(lastChar) && vowels.includes(secondLastChar) && !['w', 'x', 'y'].includes(lastChar)) {
+                 const thirdLastChar = base.slice(-3,-2);
+                 // Consonant-Vowel-Consonant doubling rule
+                 if (base.length === 2 || !vowels.includes(thirdLastChar)) {
+                    return base + lastChar + 'ed';
+                 }
+            }
+            return base + 'ed';
+        }
+
+        if (inflection === 'ing') {
+             if (base.endsWith('ie')) {
+                return base.slice(0, -2) + 'ying';
+            }
+            if (lastChar === 'e' && !base.endsWith('ee')) {
+                return base.slice(0, -1) + 'ing';
+            }
+            if (base.length > 1 && !vowels.includes(lastChar) && vowels.includes(secondLastChar) && !['w', 'x', 'y'].includes(lastChar)) {
+                const thirdLastChar = base.slice(-3,-2);
+                if (base.length === 2 || !vowels.includes(thirdLastChar)) {
+                   return base + lastChar + 'ing';
+                }
+            }
+            return base + 'ing';
+        }
+
+        return base;
+    }
+
+    function getDistractors(correctOption) {
+        const distractors = [];
+        const usedBaseForms = new Set([correctOption.baseForm]);
+        let inflection = '';
+
+        // Determine inflection based on the difference between the word in sentence and base form
+        if (correctOption.word !== correctOption.baseForm) {
+            // Check irregulars first
+            if (irregularVerbs[correctOption.baseForm]) {
+                const forms = irregularVerbs[correctOption.baseForm];
+                if (correctOption.word === forms.v2) inflection = 'v2';
+                else if (correctOption.word === forms.v3) inflection = 'v3';
+            }
+            
+            // If not irregular, check standard endings
+            if (!inflection && (correctOption.pos.includes('v') || correctOption.pos.includes('n'))) {
+                if (correctOption.word.endsWith('s') && !correctOption.word.endsWith('ss')) inflection = 's';
+                else if (correctOption.word.endsWith('ed')) inflection = 'ed';
+                else if (correctOption.word.endsWith('d') && !correctOption.baseForm.endsWith('d')) inflection = 'd';
+                else if (correctOption.word.endsWith('ing')) inflection = 'ing';
+            }
+        }
+
+        const allCandidates = questionBank.filter(q => q.baseForm !== correctOption.baseForm);
+        
+        let samePosCandidates = allCandidates.filter(q => q.pos === correctOption.pos);
+        let otherCandidates = allCandidates.filter(q => q.pos !== correctOption.pos);
+        
+        shuffleArray(samePosCandidates);
+        shuffleArray(otherCandidates);
+        
+        const correctFirstChar = correctOption.word.charAt(0).toLowerCase();
+        const usedFirstChars = new Set([correctFirstChar]);
+
+        function addDistractor(candidate, shouldConjugate) {
+             const distractorBaseForm = candidate.baseForm;
+             let finalWord = distractorBaseForm;
+             
+             if (shouldConjugate) {
+                 finalWord = conjugate(distractorBaseForm, inflection);
+             }
+             
+             distractors.push({
+                word: finalWord,
+                baseForm: distractorBaseForm,
+                pos: candidate.pos,
+                definition_ch: candidate.definition_ch
+            });
+            usedBaseForms.add(distractorBaseForm);
+            usedFirstChars.add(distractorBaseForm.charAt(0).toLowerCase());
+        }
+
+        for (const candidate of samePosCandidates) {
+            if (distractors.length >= 3) break;
+            const char = candidate.baseForm.charAt(0).toLowerCase();
+            if (!usedFirstChars.has(char)) {
+                addDistractor(candidate, true);
+            }
+        }
+
+        if (distractors.length < 3) {
+            for (const candidate of samePosCandidates) {
+                if (distractors.length >= 3) break;
+                if (!usedBaseForms.has(candidate.baseForm)) {
+                    addDistractor(candidate, true);
+                }
+            }
+        }
+
+        if (distractors.length < 3) {
+            for (const candidate of otherCandidates) {
+                if (distractors.length >= 3) break;
+                const char = candidate.baseForm.charAt(0).toLowerCase();
+                if (!usedFirstChars.has(char)) {
+                    addDistractor(candidate, false); 
+                }
+            }
+        }
+
+        if (distractors.length < 3) {
+            for (const candidate of otherCandidates) {
+                if (distractors.length >= 3) break;
+                if (!usedBaseForms.has(candidate.baseForm)) {
+                    addDistractor(candidate, false);
+                }
+            }
+        }
+
+        return distractors;
+    }
+
+    function checkAnswer(e) {
+        const selectedButton = e.target;
+        const selectedWord = selectedButton.dataset.word;
+        const correctWord = currentQuestions[currentQuestionIndex].word;
+
+        const baseForm = selectedButton.dataset.baseForm;
+        const pos = selectedButton.dataset.pos;
+        const definition = selectedButton.dataset.definition;
+        feedbackContainer.textContent = `${baseForm}: (${pos}) ${definition}`;
+
+        if (selectedWord === correctWord) {
+            selectedButton.classList.add('correct');
+            if (!answeredIncorrectly) {
+                score++;
+                scoreCounter.textContent = `Score: ${score}`;
+            }
+            disableOptions();
+            
+            if (currentQuestionIndex === questionsToAttempt - 1) {
+                nextBtn.textContent = "Finish Quiz";
+            } else {
+                nextBtn.textContent = "Next Question";
+            }
+            
+            nextBtn.style.display = 'inline-block';
+        } else {
+            selectedButton.classList.add('incorrect');
+            selectedButton.disabled = true;
+            answeredIncorrectly = true;
+        }
+    }
+
+    function disableOptions() {
+        Array.from(optionsContainer.children).forEach(button => {
+            button.disabled = true;
+        });
+    }
+
+    function handleNextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questionsToAttempt) {
+            displayQuestion();
+        } else {
+            endGame();
+        }
+    }
+
+    function endGame() {
+        quizScreen.style.display = 'none';
+        endScreen.style.display = 'block';
+
+        finalScore.textContent = `${score} / ${questionsToAttempt}`;
+        const percentage = (score / questionsToAttempt) * 100;
+
+        let comment = '';
+        if (percentage === 100) {
+            comment = "Flawless! You've mastered these words. Well done!";
+        } else if (percentage >= 80) {
+            comment = "Excellent work! You have a strong command of these words.";
+        } else if (percentage >= 60) {
+            comment = "Good job! A little more revision will make you an expert.";
+        } else if (percentage >= 40) {
+            comment = "Solid effort. Keep practicing to get more familiar with the words.";
+        } else {
+            comment = "A good start. Do some revision and try again to boost your score!";
+        }
+        endComment.textContent = comment;
+
+        displayRevisionList();
+    }
+
+    function displayRevisionList() {
+        revisionContainer.style.display = 'block';
+        revisionList.innerHTML = '';
+
+        currentQuestions.forEach(question => {
+            const item = document.createElement('div');
+            item.classList.add('revision-item');
+
+            let displayWord = question.word;
+            if (question.sentence.startsWith('_______') || question.sentence.startsWith('A/An _______')) {
+                displayWord = displayWord.charAt(0).toUpperCase() + displayWord.slice(1);
+            }
+
+            const fullSentence = question.sentence.replace('_______', `<strong>${displayWord}</strong>`);
+
+            item.innerHTML = `
+                <p class="word-info">${question.baseForm} <span>(${question.pos}) ${question.definition_ch}</span></p>
+                <p class="sentence-info">${fullSentence}</p>
+            `;
+            revisionList.appendChild(item);
+        });
+    }
+
+    function resetToTitle() {
+        endScreen.style.display = 'none';
+        quizScreen.style.display = 'none';
+        startScreen.style.display = 'block';
+    }
+
+    nextBtn.addEventListener('click', handleNextQuestion);
+    restartBtn.addEventListener('click', resetToTitle);
+    returnBtn.addEventListener('click', resetToTitle);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        startScreen.style.display = 'block';
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    });
+
+</script>
+
+
+
+</body></html>
