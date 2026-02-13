@@ -210,7 +210,7 @@
         border-bottom: 2px solid var(--primary-accent);
         margin: 0 5px;
         /* Pushes the line down to align with text descenders */
-        vertical-align: -5px; 
+        vertical-align: -8px; 
     }
 
     /* Options Grid */
@@ -371,17 +371,21 @@
         text-align: center;
     }
 
-    /* Mobile Responsiveness - OPTIMIZED FOR NO SCROLLING */
-    @media (max-width: 768px) {
+    /* COMPACT MODE: Tablets (iPad) & Mobile & Short Screens */
+    /* Targets screens narrower than 1024px OR shorter than 850px */
+    @media screen and (max-width: 1024px), screen and (max-height: 850px) {
         body {
             /* Reduce outer padding to maximize screen real estate */
             padding: 10px;
-            align-items: center;
+            /* Align flex start to allow scrolling if content is still too tall */
+            align-items: flex-start;
         }
         
         .app-container {
             /* Reduce internal padding */
-            padding: 20px 15px;
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 95%;
             /* Ensure it fits vertically */
             display: flex;
             flex-direction: column;
@@ -395,7 +399,7 @@
         }
 
         header h2 {
-            font-size: 1.5rem; /* Smaller title */
+            font-size: 1.6rem; /* Smaller title */
             margin: 5px 0;
         }
 
@@ -410,18 +414,18 @@
         
         #question-text {
             /* Smaller font and margins to fit content */
-            font-size: 1.2rem;
-            margin: 15px 0;
-            min-height: auto; /* Remove fixed height to save space */
+            font-size: 1.3rem;
+            margin: 15px 0; /* Significantly reduced margin */
+            min-height: auto; /* Remove fixed height */
         }
 
         .blank {
-            width: 80px; /* Slightly shorter blank for mobile */
+            width: 80px; /* Slightly shorter blank */
         }
         
         #options-container {
-            grid-template-columns: 1fr;
-            gap: 8px; /* Tighter gap */
+            /* Keep grid but reduce gaps */
+            gap: 10px; 
             margin-bottom: 15px;
         }
         
@@ -433,7 +437,7 @@
         #feedback-container {
             margin-top: 10px;
             min-height: 40px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             padding: 8px;
         }
 
@@ -451,6 +455,14 @@
             margin-top: 15px;
             padding-top: 10px;
         }
+    }
+
+    /* Extra compact for very short screens (e.g. landscape phones) */
+    @media screen and (max-height: 600px) {
+        header h2 { font-size: 1.3rem; }
+        #question-text { margin: 10px 0; font-size: 1.1rem; }
+        .option-btn { padding: 8px; }
+        .app-container { padding: 10px; }
     }
 </style>
 </head>
