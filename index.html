@@ -11,22 +11,14 @@
 
     :root {
         /* TWO-TONE THEME: Sage & Cream */
-        
-        /* Tone 1: The Backgrounds (Warm/Light) */
         --bg-color: #f4f1ea;
         --card-bg: #ffffff;
         --input-bg: #fdfcf8;
-        
-        /* Tone 2: The Accents (Deep/Dark) */
         --primary-accent: #2d5a45; /* Forest Green */
         --primary-hover: #1e3d2f;
         --secondary-accent: #8fa89b; /* Muted Sage */
-        
-        /* Text */
         --text-main: #2c3e50;
         --text-muted: #64748b;
-        
-        /* Feedback */
         --correct-bg: #d1fae5;
         --correct-text: #065f46;
         --incorrect-bg: #ffe4e6;
@@ -38,9 +30,8 @@
     }
 
     body {
-        font-family: 'DM Sans', sans-serif; /* Clean modern sans for UI */
+        font-family: 'DM Sans', sans-serif;
         background-color: var(--bg-color);
-        /* Subtle grain texture for a paper feel */
         background-image: radial-gradient(#e0ded5 1px, transparent 1px);
         background-size: 20px 20px;
         color: var(--text-main);
@@ -75,10 +66,13 @@
         border: 1px solid rgba(0,0,0,0.05);
         border-radius: 16px;
         padding: 40px;
-        box-shadow: 0 20px 40px -10px rgba(45, 90, 69, 0.15); /* Greenish shadow */
+        box-shadow: 0 20px 40px -10px rgba(45, 90, 69, 0.15);
         text-align: center;
         position: relative;
         margin: auto; 
+        /* Ensure container doesn't overflow viewport on small screens if possible */
+        max-height: 98vh;
+        overflow-y: auto;
     }
 
     header {
@@ -97,7 +91,7 @@
     }
 
     header h2 {
-        font-family: 'Lora', serif; /* Serif font for the "Academic" title */
+        font-family: 'Lora', serif;
         font-size: 2.2rem;
         margin: 10px 0;
         font-weight: 600;
@@ -136,7 +130,6 @@
         flex-wrap: wrap;
     }
 
-    /* Buttons - The "Dark Tone" */
     .btn {
         background-color: var(--primary-accent);
         color: #fff;
@@ -201,7 +194,7 @@
 
     /* Question Area */
     #question-text {
-        font-family: 'Lora', serif; /* Serif for the sentence reading */
+        font-family: 'Lora', serif;
         font-size: 1.5rem;
         line-height: 1.6;
         margin: 30px 0;
@@ -210,11 +203,14 @@
         color: var(--text-main);
     }
 
+    /* UPDATED BLANK STYLE */
     .blank {
         display: inline-block;
         width: 100px;
         border-bottom: 2px solid var(--primary-accent);
         margin: 0 5px;
+        /* Pushes the line down to align with text descenders */
+        vertical-align: -5px; 
     }
 
     /* Options Grid */
@@ -225,12 +221,11 @@
         margin-bottom: 25px;
     }
 
-    /* Option Buttons - The "Light Tone" that turns Dark */
     .option-btn {
         width: 100%;
         background-color: var(--input-bg);
         color: var(--primary-accent);
-        border: 2px solid #e2e8f0; /* Light grey border */
+        border: 2px solid #e2e8f0;
         padding: 16px 20px;
         border-radius: 10px;
         font-size: 1.1rem;
@@ -247,7 +242,6 @@
         transform: translateY(-2px);
     }
 
-    /* Correct/Incorrect States */
     .option-btn.correct {
         background-color: var(--primary-accent) !important;
         border-color: var(--primary-accent) !important;
@@ -377,39 +371,85 @@
         text-align: center;
     }
 
-    /* Mobile Responsiveness */
+    /* Mobile Responsiveness - OPTIMIZED FOR NO SCROLLING */
     @media (max-width: 768px) {
         body {
-            align-items: flex-start;
-            padding: 15px;
+            /* Reduce outer padding to maximize screen real estate */
+            padding: 10px;
+            align-items: center;
         }
         
         .app-container {
-            padding: 25px 20px;
+            /* Reduce internal padding */
+            padding: 20px 15px;
+            /* Ensure it fits vertically */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header {
+            /* Compact header */
+            margin-bottom: 15px;
+            padding-bottom: 10px;
         }
 
         header h2 {
-            font-size: 1.6rem;
+            font-size: 1.5rem; /* Smaller title */
+            margin: 5px 0;
+        }
+
+        header p {
+            font-size: 0.85rem;
+        }
+
+        #quiz-screen .quiz-header {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
         }
         
         #question-text {
-            font-size: 1.25rem;
-            margin: 20px 0;
+            /* Smaller font and margins to fit content */
+            font-size: 1.2rem;
+            margin: 15px 0;
+            min-height: auto; /* Remove fixed height to save space */
+        }
+
+        .blank {
+            width: 80px; /* Slightly shorter blank for mobile */
         }
         
         #options-container {
             grid-template-columns: 1fr;
-            gap: 10px;
+            gap: 8px; /* Tighter gap */
+            margin-bottom: 15px;
         }
         
         .option-btn {
-            padding: 14px;
+            padding: 12px; /* Smaller buttons */
             font-size: 1rem;
+        }
+
+        #feedback-container {
+            margin-top: 10px;
+            min-height: 40px;
+            font-size: 0.9rem;
+            padding: 8px;
+        }
+
+        #next-btn {
+            margin-top: 15px;
+            padding: 10px;
         }
         
         .question-count-options .btn {
             flex: 1 1 30%;
             padding: 10px;
+        }
+
+        footer {
+            margin-top: 15px;
+            padding-top: 10px;
         }
     }
 </style>
@@ -468,7 +508,6 @@
 
 <script>
     // Irregular verb mapping for A1/A2 words
-    // Format: base: { v2: "past", v3: "participle" }
     const irregularVerbs = {
         "become": { v2: "became", v3: "become" },
         "begin": { v2: "began", v3: "begun" },
